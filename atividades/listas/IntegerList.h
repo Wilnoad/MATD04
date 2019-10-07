@@ -11,3 +11,47 @@ void printList(IntegerList *) /* prints the integer value of each of the list el
 B. Colocar o código no GitHub, em um repositório seu, individual, chamado de "matd04", na subpasta (folder) "atividades/listas" (estrutura matd04/atividades/listas/) . Usar um arquivo .h para definir tipos e protótipos de funções usadas (ver https://github.com/christinaflach/aulas/blob/master/matd04/atividades/listas/IntegerList.h).
 
 Obs.: Não é preciso disponibilizar a função "main".
+
+
+#include <stdio.h>
+#include <stdlib.h>
+  
+// A linked list node
+typedef struct Node {
+  int data;
+  struct Node * next;
+} IntegerList;
+
+int main(){
+  int x = 0;
+  int *n;
+  n = &x;
+  void printList(IntegerList *n);
+  IntegerList *head = NULL;
+  head = (IntegerList*)malloc(sizeof(IntegerList));
+  head -> data = 90;
+  if(head)
+    printList(head);
+
+}
+
+void printList(IntegerList *n)
+{ 
+    while (n != NULL) { 
+        printf(" %d ", n->data); 
+        n = n->next;
+    } 
+} 
+
+int isEmpty(IntegerList *p){
+  if(p){
+    do{
+      printf(" %d", p->data);
+      p = p-> next;
+    }while(p);
+  }else{
+    return 1;
+  }
+
+  return 0;
+}
