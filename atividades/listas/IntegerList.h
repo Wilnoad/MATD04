@@ -34,7 +34,7 @@ int main(){
     printList(head);
 
 }
-
+//Imprime a Lista
 void printList(IntegerList *n)
 { 
     while (n != NULL) { 
@@ -43,15 +43,10 @@ void printList(IntegerList *n)
     } 
 } 
 
+//Lista Vazia
 int isEmpty(IntegerList *p){
-  if(p){
-    do{
-      printf(" %d", p->data);
-      p = p-> next;
-    }while(p);
-  }else{
+  if(p == NULL)
+    return 0;
+  else
     return 1;
-  }
-
-  return 0;
 }
